@@ -1,18 +1,30 @@
 Source: visualdct
-Section: misc
+Section: java
 Priority: optional
 Maintainer: Michael Davidsaver <mdavidsaver@gmail.com>
-Build-Depends: debhelper (>= 9), javahelper, ant,
-Build-Depends-Indep: default-jdk
-Standards-Version: 3.8.0
-Homepage: http://visualdct.cosylab.com/
-Vcs-Git: https://github.com/epicsdeb/visualdct.git
-Vcs-Browser: https://github.com/epicsdeb/visualdct
+Build-Depends: debhelper (>= 10), default-jdk, maven-debian-helper (>= 2.1)
+Build-Depends-Indep: libmaven-javadoc-plugin-java, libmysql-java, default-jdk-doc 
+Standards-Version: 3.9.8
+Vcs-Git: https://anonscm.debian.org/git/pkg-java/visualdct.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/visualdct.git
+Homepage: https://github.com/epics-extensions/VisualDCT
 
 Package: visualdct
 Architecture: all
-Depends: default-jre, ${java:Depends},
-Recommends: ${java:Recommends}
-Description: VDCT EPICS database visualization and designer
- A tool to provide a graphical view of an EPICS database with
- the capibility to edit.
+Depends: ${misc:Depends}, ${maven:Depends}
+Suggests: ${maven:OptionalDepends}, visualdct-doc
+Description: Visual DCT
+ EPICS Visual Database Configuration Tool. Developed by Cosylab, funded
+ by SLS, APS, Diamond and SNS.
+
+Package: visualdct-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Recommends: ${maven:DocDepends}, ${maven:DocOptionalDepends}
+Suggests: visualdct
+Description: Documentation for Visual DCT
+ EPICS Visual Database Configuration Tool. Developed by Cosylab, funded
+ by SLS, APS, Diamond and SNS.
+ .
+ This package contains the API documentation of visualdct.

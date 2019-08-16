@@ -1,0 +1,10 @@
+Document: visualdct
+Title: API Javadoc for Visual DCT
+Author: Cosylab developers
+Abstract: This is the API Javadoc provided for the
+ visualdct library.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/visualdct/api/index.html
+Files: /usr/share/doc/visualdct/api/*

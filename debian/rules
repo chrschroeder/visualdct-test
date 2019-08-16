@@ -1,17 +1,7 @@
 #!/usr/bin/make -f
 
-export DH_VERBOSE=1
-
-JAVA_HOME := /usr/lib/jvm/default-java
-
-DEB_VERSION = $(shell dpkg-parsechangelog | egrep '^Version:' | cut -f 2 -d ' ')
-DEB_NOEPOCH_VERSION = $(shell echo $(DEB_VERSION) | cut -d: -f2-)
-
 %:
-	dh $@ --with javahelper
+	dh $@
 
-override_dh_auto_build:
-	dh_auto_build -- -f VDCTBuild.xml -Dbuild.version="$(DEB_NOEPOCH_VERSION)"
-
-override_dh_auto_clean:
-	rm -rf build
+get-orig-source:
+	uscan --download-current-version --force-download --no-symlink

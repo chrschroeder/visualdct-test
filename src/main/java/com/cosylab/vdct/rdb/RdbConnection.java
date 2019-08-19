@@ -56,7 +56,7 @@ public class RdbConnection {
      * @throws Exception foo
      */
     public RdbConnection() throws Exception {
-		Class.forName("com.mysql.jdbc.Driver").newInstance();
+		Class.forName("org.mariadb.jdbc.Driver").newInstance();
 	}
 	
     /**
@@ -96,7 +96,7 @@ public class RdbConnection {
      */
     public Connection createConnection() throws SQLException {
 		connection = null;
-		String connectionString = "jdbc:mysql://" + host + "/" + database
+		String connectionString = "jdbc:mariadb://" + host + "/" + database
 		+ "?user=" + user + "&password=" + password;
 
 		connection = DriverManager.getConnection(connectionString);

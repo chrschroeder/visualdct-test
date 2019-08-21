@@ -1,3 +1,13 @@
+visualdct (2.8.1-1) unstable; urgency=medium
+
+  * New upstream version 2.8.1
+  * regenerate debian files for maven build
+  * readd startup script
+  * add libmariadb as alternative to mysql dependency
+  * add replace-mysql-with-mariadb.patch
+
+ -- Christoph Schröder <christoph.schroeder@helmholtz-berlin.de>  Wed, 21 Aug 2019 09:52:33 +0200
+
 visualdct (2.6.1279-1) unstable; urgency=medium
 
   * New upstream version 2.6.1279
